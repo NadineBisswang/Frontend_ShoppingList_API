@@ -1,0 +1,617 @@
+/*Grid-Layout Bereich*/
+
+
+/*Verschiedene Hintergrund-Bilder für den body*/
+
+#wallpaper_canyon {
+    background-image: url("https://wallpapercave.com/wp/wp3076548.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#wallpaper_mountains {
+    background-image: url("https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#wallaper_eveningMountain {
+    background-image: url("https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#wallpaper_city {
+    background-image: url("https://cdn.wallpapersafari.com/0/97/ftJ2a9.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    grid-area: header;
+    background-color: black;
+    z-index: 10;
+    position: fixed;
+    width: 100vw;
+    height: 45px;
+}
+
+#homebutton {
+    width: 30px;
+    padding-left: 5px;
+}
+
+h1 {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+/*Bereich der Sidebar*/
+
+sidebar {
+    grid-area: sidebar;
+    background-color: #424242;
+    position: absolute;
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    left: -170px;
+    transition: all 300ms linear;
+    z-index: 8;
+}
+
+sidebar.active {
+    left: 0px;
+}
+
+sidebar .toggle_btn {
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+}
+
+sidebar .toggle_btn.active {
+    position: absolute;
+    right: 170px;
+    bottom: 4px;
+}
+
+sidebar .toggle_btn #toggle_icon {
+    height: 35px;
+    width: 35px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+}
+
+.sidebar_content {
+    position: fixed;
+    top: 100px;
+}
+
+
+/*Select-List zum Switchen zwischen verschiedenen Boards*/
+
+select {
+    -moz-appearance: none;
+    /*Für Safari und Google Chrome*/
+    -webkit-appearance: none;
+    appearance: none;
+    width: 112%;
+    height: 40px;
+    padding-left: 10px;
+    margin-left: 20px;
+    background-color: #424242;
+    color: #fff;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    background-position: 80% center;
+}
+
+
+/*Damit im IE der Pfeil der Select-Liste nicht erscheint*/
+
+select::-ms-expand {
+    display: none;
+}
+
+select:hover {
+    color: white;
+    background-color: black;
+    outline: none;
+}
+
+option {
+    background: #424242;
+}
+
+option:hover {
+    background-color: #222;
+    color: white;
+}
+
+
+/*---wird als Erstes angezeigt (ab hier)---*/
+
+
+/*Div Klasse neue_liste umschließt die Funktion newList() und den Titel h4 jeder neuen Liste*/
+
+.neue_liste {
+    margin: 0 1em;
+    min-width: 270px;
+    background-color: white;
+    padding: 6px;
+    float: left;
+    display: flex;
+    opacity: 0.8;
+}
+
+
+/*neue_listeTitel = h4 = Titel jeder neuen Liste*/
+
+#neue_listeTitel {
+    color: black;
+}
+
+
+/*Form_Feld innerhalb von dem div neue_liste*/
+
+#form_newList {
+    vertical-align: center;
+    padding: 6px;
+}
+
+
+/*---wird als Erstes angezeigt (bis hier)---*/
+
+
+/*---ab hier: Dynamische neue Listen---*/
+
+
+/*Einzelne Liste mit weißem Hintergrund*/
+
+.list_areaClass {
+    margin: 0 1em;
+    min-width: 270px;
+    background-color: white;
+    padding: 12px;
+    float: left;
+    position: relative;
+    opacity: 0.9;
+}
+
+h4 {
+    margin: 8px 6px;
+}
+
+
+/*Formular mit dem Input Feld "Was musst du erledigen?"*/
+
+.form_zu_erledigen input {
+    margin: 6px 0px;
+}
+
+input {
+    margin-left: -3px;
+    margin-right: 15px;
+    border: none;
+    padding: 6px 6px;
+    width: 190px;
+}
+
+
+/*Titel für Incomplete oder completed Tasks*/
+
+h3 {
+    font-size: 14px;
+    padding: 6px;
+    border-bottom: 1px solid #F2F2F2;
+    color: black;
+}
+
+
+/*Zwei Listen: Incomplete Tasks und completed Tasks*/
+
+.ul_incompleteTasks {
+    margin: 0;
+    padding: 0;
+}
+
+.ul_completedTasks {
+    text-decoration: line-through;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    position: relative;
+    padding: 6px;
+    list-style-type: none;
+    background-color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/*Check-Icon, Add-Button, Close-Button, Edit-Button*/
+
+.trashIcon {
+    width: 20px;
+    height: 17px;
+    cursor: pointer;
+    float: right;
+    opacity: 0.5;
+}
+
+.checkbox {
+    float: left;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.addButton {
+    width: 28px;
+    padding: 7px 1px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 0;
+}
+
+#addButton:hover {
+    background-color: #bbb;
+}
+
+.close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 8px 1px;
+    width: 28px;
+    z-index: 5;
+    text-align: center;
+}
+
+
+/*Beim Hovern über den Close-Button - Automatisches Hovern über bttnBereich und damit über den Edit-Button*/
+
+.close:hover,
+.bttnBereich:hover {
+    background-color: black;
+    color: white;
+    visibility: visible;
+}
+
+.close:hover~.bttnBereich,
+.bttnBereich:hover~.close {
+    background-color: black;
+    color: white;
+    visibility: visible;
+}
+
+
+/*Der versteckte Edit-Button liegt innerhalb dem div bttnBereich*/
+
+.bttnBereich {
+    visibility: hidden;
+    position: absolute;
+    float: right;
+    width: 23px;
+    height: 22px;
+    right: -22px;
+    top: 0px;
+    z-index: 5;
+    padding: 5px;
+}
+
+
+/*Media Queries*/
+
+
+/*Kleines Smartphone*/
+
+@media only screen and (max-width: 379px) {
+    #boardname {
+        margin-left: -110px;
+        width: 140px;
+    }
+    #navigation {
+        visibility: collapse;
+    }
+    #navigation.active {
+        visibility: visible;
+    }
+    #nav {
+        visibility: collapse;
+    }
+    #nav.active {
+        visibility: visible;
+        background-color: black;
+    }
+    .table_header {
+        width: 100vw;
+    }
+    td .toggle_btn {
+        width: 30px;
+        height: 30px;
+        margin-top: -10px;
+    }
+    sidebar {
+        visibility: hidden;
+    }
+    body {
+        height: 100vh;
+        width: auto;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        background-color: #F2F2F2;
+    }
+    #heute {
+        visibility: collapse;
+    }
+    .burger {
+        width: 30px;
+        margin: 7px 18px;
+        visibility: visible;
+        padding-right: 10%;
+    }
+    #content_area {
+        clear: left;
+    }
+    .list_areaClass {
+        margin: 5px 2% 5px 2%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        float: left;
+        position: relative;
+        opacity: 0.9;
+        transform: scale(0.8);
+    }
+    .neue_liste {
+        margin: 5px 2% 5px 2%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        margin-top: 70px;
+        float: left;
+        display: flex;
+        opacity: 0.8;
+        transform: scale(0.8);
+    }
+}
+
+
+/*Smartphone*/
+
+@media only screen and (min-width: 380px) and (max-width: 479px) {
+    #boardname {
+        margin-left: -210px;
+        width: 140px;
+    }
+    #navigation {
+        visibility: collapse;
+    }
+    #navigation.active {
+        visibility: visible;
+    }
+    #nav {
+        visibility: collapse;
+    }
+    #nav.active {
+        visibility: visible;
+    }
+    .table_header {
+        width: 100vw;
+    }
+    td .toggle_btn {
+        width: 66px;
+    }
+    sidebar {
+        visibility: hidden;
+    }
+    body {
+        height: 100vh;
+        width: auto;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        background-color: #F2F2F2;
+    }
+    #heute {
+        visibility: collapse;
+    }
+    .burger {
+        width: 30px;
+        margin: 7px 18px;
+        visibility: visible;
+        padding-right: 10%;
+    }
+    content {
+        padding-left: 0px;
+    }
+    #content_area {
+        clear: left;
+    }
+    .list_areaClass {
+        margin: 20px 10% 20px 10%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        float: left;
+        position: relative;
+        opacity: 0.9;
+    }
+    .neue_liste {
+        margin: 20px 10% 20px 10%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        margin-top: 70px;
+        float: left;
+        display: flex;
+        opacity: 0.8;
+    }
+}
+
+
+/*Tablet*/
+
+@media only screen and (min-width: 480px) and (max-width: 900px) {
+    #boardname {
+        margin-left: -210px;
+        width: 140px;
+    }
+    #navigation {
+        visibility: collapse;
+    }
+    #navigation.active {
+        visibility: visible;
+    }
+    #nav {
+        visibility: collapse;
+    }
+    #nav.active {
+        visibility: visible;
+    }
+    .table_header {
+        width: 100vw;
+    }
+    td .toggle_btn {
+        width: 66px;
+    }
+    sidebar {
+        visibility: hidden;
+    }
+    body {
+        height: 100vh;
+        width: auto;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        background-color: #F2F2F2;
+    }
+    #heute {
+        visibility: collapse;
+    }
+    .burger {
+        width: 30px;
+        margin: 7px 18px;
+        visibility: visible;
+        padding-right: 10%;
+    }
+    content {
+        padding-left: 0px;
+    }
+    #content_area {
+        clear: left;
+    }
+    .list_areaClass {
+        margin: 20px 10% 20px 10%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        float: left;
+        position: relative;
+        opacity: 0.9;
+    }
+    .neue_liste {
+        margin: 20px 10% 20px 10%;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        margin-top: 70px;
+        float: left;
+        display: flex;
+        opacity: 0.8;
+    }
+}
+
+
+/*Normaler Bildschirm*/
+
+@media only screen and (min-width: 900px) {
+    #home_button {
+        width: 45px;
+        padding-left: 10px;
+    }
+    #boardname {
+        width: 100px;
+    }
+    td .toggle_btn {
+        width: 66px;
+    }
+    .table_header {
+        width: 100vw;
+    }
+    body {
+        height: 100vh;
+        width: auto;
+        display: grid;
+        grid-template-rows: 45px 1fr;
+        grid-template-columns: 0px 1fr;
+        grid-template-areas: "header header" "sidebar content";
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        background-color: #F2F2F2;
+    }
+    #heute {
+        color: #747474;
+        font-size: 14px;
+        float: right;
+        visibility: visible;
+        margin-top: -83px;
+        margin-right: 20px;
+    }
+    .burger {
+        height: 45px;
+        visibility: collapse;
+    }
+    content {
+        grid-area: content;
+        transition: all 300ms linear;
+        position: relative;
+    }
+    content.active {
+        margin-left: 170px;
+    }
+    #content_area {
+        margin: 4em 1em;
+        float: left;
+        display: flex;
+        align-items: flex-start;
+    }
+    .list_areaClass {
+        margin: 0 1em;
+        min-width: 270px;
+        background-color: white;
+        padding: 12px;
+        float: left;
+        position: relative;
+        opacity: 0.9;
+    }
+    .neue_liste {
+        margin: 0 1em;
+        min-width: 270px;
+        background-color: white;
+        padding: 6px;
+        margin-left: 90px;
+        float: left;
+        display: flex;
+        opacity: 0.8;
+    }
+    #navigation {
+        visibility: hidden;
+    }
+    #navigation.active {
+        visibility: hidden;
+    }
+}

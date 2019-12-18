@@ -1,0 +1,37 @@
+/*Druckansicht*/
+
+@media print {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    img {
+        display: none;
+    }
+    #boardname {
+        width: 200px;
+    }
+    select {
+        display: none;
+    }
+    #heute {
+        display: none;
+    }
+    .neue_liste {
+        display: none;
+    }
+    .addButton {
+        display: none;
+    }
+    input {
+        display: none;
+    }
+    .close {
+        display: none;
+    }
+    .list_areaClass {
+        padding: 20px;
+    }
+    h4 {
+        font-size: 25px;
+    }
+}

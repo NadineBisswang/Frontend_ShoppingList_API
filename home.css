@@ -1,0 +1,149 @@
+@media only screen and (max-width: 480px) {
+    sidebar {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 900px) {
+    sidebar {
+        visibility: hidden;
+    }
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 45px 1fr;
+    grid-template-columns: 0 1fr;
+    grid-template-areas: "header header" "sidebar content";
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: white;
+    z-index: 0;
+}
+
+header {
+    grid-area: header;
+    background-color: black;
+    z-index: 10;
+}
+
+#homebutton {
+    width: 30px;
+    margin: 6px 14px;
+}
+
+h1 {
+    color: white;
+    font-size: 14px;
+}
+
+#heute {
+    color: #747474;
+    font-size: 14px;
+    float: right;
+    margin-right: 20px;
+    margin-top: -38px;
+}
+
+content {
+    grid-area: content;
+    transition: all 300ms linear;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#list_area {
+    position: relative;
+    max-width: 270px;
+    background-color: white;
+    padding: 6px;
+    float: left;
+}
+
+.list_areaClass {
+    margin: 1em 1em;
+    width: 270px;
+    background-color: white;
+    padding: 6px;
+    float: left;
+}
+
+#content_abstand {
+    margin-top: 3em;
+}
+
+.content_area {
+    /* margin: 1em 1em;*/
+    float: left;
+    width: 320px;
+    height: 200px;
+}
+
+.content_area_h2 {
+    z-index: 10;
+    padding-top: 70px;
+    padding-left: 100px;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 25px;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: white;
+}
+
+.content_area_h2_Board {
+    z-index: 10;
+    padding-top: 70px;
+    padding-left: 115px;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 25px;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: white;
+}
+
+.content_area_img {
+    z-index: 6;
+    opacity: 0.5;
+    margin: 1em 1em;
+    height: 180px;
+    width: 300px;
+    display: flex;
+    position: absolute;
+}
+
+.titelListe {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+iframe.verkleinert {
+    margin: 1em 1em;
+    height: 720px;
+    width: 1200px;
+    display: flex;
+    position: absolute;
+    transform: scale(0.25);
+    transform-origin: left top 0;
+    z-index: 5;
+}
+
+.iframe_table td {
+    margin: 5px;
+}
